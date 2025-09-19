@@ -8,6 +8,48 @@ Extracted from Azure Portal version 16.139.2.1 on 2025-09-19.
 
 Icons [used with permission from Microsoft](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/permissions).
 
+## Setting up GitHub Pages
+
+This repository is configured to automatically publish as a GitHub Pages website. To enable GitHub Pages for your fork:
+
+### Repository Owner Instructions
+
+1. **Go to Settings**: Navigate to your repository **Settings** → **Pages** 
+2. **Set Source**: Under "Build and deployment", set **Source** to "GitHub Actions"
+3. **Save**: Click "Save" 
+4. **Deploy**: Push to `main` branch or manually run the "Deploy static content to Pages" workflow
+5. **Access**: Your site will be available at `https://[your-username].github.io/azure-icons/`
+
+### Features
+
+- **Interactive gallery** with click-to-download functionality for individual SVG files
+- **Responsive design** that works on all devices
+- **Fast loading** with lazy image loading optimization  
+- **Searchable** content via browser search
+- **Automatic updates** when new icons are added to the repository
+
+### Manual Deployment
+
+To manually trigger deployment:
+1. Go to **Actions** tab in your repository
+2. Select "Deploy static content to Pages" workflow
+3. Click "Run workflow" → "Run workflow"
+
+### Customization
+
+The gallery is generated from `index.html` and automatically includes all SVG files from the `/svg` directory. To customize:
+
+- Edit `index.html` for layout/styling changes
+- Modify the GitHub Actions workflow in `.github/workflows/static.yml` if needed
+- Add new SVG icons to `/svg` directory - they'll appear automatically
+
+### Troubleshooting
+
+- **Workflow fails**: Check the Actions tab for error details
+- **Pages not updating**: Ensure GitHub Pages source is set to "GitHub Actions" in Settings
+- **404 error**: Wait a few minutes after first deployment, GitHub Pages can take time to propagate
+- **Icons not loading**: Verify SVG files are in the correct `/svg` directory structure
+
 | Icon | Type |
 | --- | --- |
 | [Azure Workbook Template](svg/AppInsightsExtension/WorkbookTemplates.svg) | microsoft.insights/ workbooktemplates |
