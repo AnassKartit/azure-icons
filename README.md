@@ -8,6 +8,48 @@ Extracted from Azure Portal version 16.139.2.1 on 2025-09-19.
 
 Icons [used with permission from Microsoft](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/permissions).
 
+## Setting up GitHub Pages
+
+This repository is configured to automatically publish as a GitHub Pages website. To enable GitHub Pages for your fork:
+
+### Repository Owner Instructions
+
+1. **Go to Settings**: Navigate to your repository **Settings** → **Pages** 
+2. **Set Source**: Under "Build and deployment", set **Source** to "GitHub Actions"
+3. **Save**: Click "Save" 
+4. **Deploy**: Push to `main` branch or manually run the "Deploy static content to Pages" workflow
+5. **Access**: Your site will be available at `https://[your-username].github.io/azure-icons/`
+
+### Features
+
+- **Interactive gallery** with click-to-download functionality for individual SVG files
+- **Responsive design** that works on all devices
+- **Fast loading** with lazy image loading optimization  
+- **Searchable** content via browser search
+- **Automatic updates** when new icons are added to the repository
+
+### Manual Deployment
+
+To manually trigger deployment:
+1. Go to **Actions** tab in your repository
+2. Select "Deploy static content to Pages" workflow
+3. Click "Run workflow" → "Run workflow"
+
+### Customization
+
+The gallery is generated from `index.html` and automatically includes all SVG files from the `/svg` directory. To customize:
+
+- Edit `index.html` for layout/styling changes
+- Modify the GitHub Actions workflow in `.github/workflows/static.yml` if needed
+- Add new SVG icons to `/svg` directory - they'll appear automatically
+
+### Troubleshooting
+
+- **Workflow fails**: Check the Actions tab for error details
+- **Pages not updating**: Ensure GitHub Pages source is set to "GitHub Actions" in Settings
+- **404 error**: Wait a few minutes after first deployment, GitHub Pages can take time to propagate
+- **Icons not loading**: Verify SVG files are in the correct `/svg` directory structure
+
 | Icon | Type |
 | --- | --- |
 | [Azure Workbook Template](svg/AppInsightsExtension/WorkbookTemplates.svg) | microsoft.insights/ workbooktemplates |
@@ -1192,5 +1234,65 @@ Icons [used with permission from Microsoft](https://www.microsoft.com/en-us/lega
 | [App Service Environment](svg/WebsitesExtension/AppServiceEnvironment.svg) | Microsoft.Web/ HostingEnvironments |
 | [App Service Domain](svg/WebsitesExtension/AppServiceDomain.svg) | Microsoft.DomainRegistration/ domains |
 | [Api App](svg/WebsitesExtension/Apiapp.svg) |  |
+
+## Setting up GitHub Pages
+
+This repository includes everything needed to publish the Azure Icons as a GitHub Pages website. The setup allows users to browse and download icons through a web interface.
+
+### Quick Setup
+
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository on GitHub
+   - Click on **Settings** tab
+   - Scroll down to **Pages** section in the left sidebar
+   - Under **Source**, select **GitHub Actions**
+   - Save the settings
+
+2. **The GitHub Pages site will automatically deploy:**
+   - The workflow triggers on pushes to the `main` branch
+   - You can also manually trigger it from the **Actions** tab
+   - Your site will be available at: `https://[your-username].github.io/azure-icons/`
+
+### Manual Deployment
+
+If you need to deploy manually:
+
+1. Go to the **Actions** tab in your GitHub repository
+2. Select the **Deploy static content to Pages** workflow
+3. Click **Run workflow**
+4. Select the branch (usually `main`) and click **Run workflow**
+
+### Features
+
+The GitHub Pages site includes:
+
+- **Interactive icon gallery** - Browse all Azure icons with search and filtering
+- **Click to download** - Individual SVG downloads for each icon  
+- **Icon metadata** - Names, types, and descriptions for each icon
+- **Responsive design** - Works on desktop and mobile devices
+- **Fast loading** - Optimized for performance with lazy loading
+
+### Customization
+
+To customize the site, you can modify:
+
+- `index.html` - Main page layout and functionality
+- The workflow file `.github/workflows/static.yml` - Deployment settings
+- Add CSS files or modify the embedded styles in `index.html`
+
+### Troubleshooting
+
+**Pages not loading?**
+- Ensure GitHub Pages is enabled in repository settings
+- Check that the source is set to "GitHub Actions"
+- Verify the workflow completed successfully in the Actions tab
+
+**Icons not displaying?**
+- Make sure all SVG files are in the `svg/` directory
+- Check that the `index.html` references the correct paths
+
+**Custom domain?**
+- Add a `CNAME` file to the root directory with your domain name
+- Configure DNS settings according to [GitHub's documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 
